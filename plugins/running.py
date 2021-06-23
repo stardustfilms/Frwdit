@@ -12,7 +12,6 @@ from translation import Translation
 FROM = Config.FROM_CHANNEL
 TO = Config.TO_CHANNEL
 FILTER = Config.FILTER_TYPE
-THUMBNAIL = "plugins/thumbnail.jpg"
 
 @Client.on_message(filters.private & filters.command(["run"]))
 async def run(bot, message):
@@ -42,8 +41,7 @@ async def run(bot, message):
             await bot.copy_message(
                 chat_id=TO,
                 from_chat_id=FROM,
-                parse_mode="md",      
-                thumb=THUMBNAIL, 
+                parse_mode="md",       
                 caption=Translation.CAPTION.format(file_name),
                 message_id=message.message_id
             )
@@ -54,8 +52,7 @@ async def run(bot, message):
             await bot.copy_message(
                 chat_id=TO,
                 from_chat_id=FROM,
-                parse_mode="md",     
-                thumb=THUMBNAIL,  
+                parse_mode="md",       
                 caption=Translation.CAPTION.format(file_name),
                 message_id=message.message_id
             )
@@ -66,7 +63,7 @@ async def run(bot, message):
             pass
    # await m.delete()
     buttons = [[
-        InlineKeyboardButton('📜 Support Group', url='https://t.me/AR_Musics')
+        InlineKeyboardButton('📜 Support Group', url='https://t.me/DxHelpDesk')
     ]] 
     reply_markup = InlineKeyboardMarkup(buttons)
     await m.edit(
